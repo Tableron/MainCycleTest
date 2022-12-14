@@ -29,7 +29,7 @@ namespace MainCycleTest
             formThread.IsBackground = true; // Прекращение этого потока не ведёт к прекращению программы
                                             // Программы может прекратить работу, если этот поток работает
             formThread.Name = "formThread";
-            formThread.Start();
+            formThread.Start(); // запуск потока
         }
     }
 
@@ -67,7 +67,7 @@ namespace MainCycleTest
         public void Start()
         {
             Console.WriteLine($"Name={Thread.CurrentThread.Name}");
-            while(true)
+            while(_contin)
             {
                 // какая-то логика
                 for (int i = 0; i < 10; i++)
@@ -78,7 +78,6 @@ namespace MainCycleTest
                     Thread.Sleep(1000); // задержка 100 мс
                 }
             }
-
         }
 
         // Метод предназначен для вызова из потока формы
