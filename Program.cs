@@ -24,7 +24,6 @@ namespace MainCycleTest
             // Поток для формы
             Form1 form1 = new Form1();
             form1.SetMainCycle(mainCycle); // ссылка на ms для обращений из формы
-            form1.StopCycleEvent += mainCycle.Stop; // событие для прекращения работы программы
             FormStarter formStarter = new FormStarter(form1); // Класс-прослойка для запуска формы в отдельном потоке
             Thread formThread = new Thread(formStarter.Start);
             formThread.IsBackground = true; // Прекращение этого потока не ведёт к прекращению программы
@@ -82,12 +81,11 @@ namespace MainCycleTest
 
         }
 
-        // Метод предназначен для 
+        // Метод предназначен для вызова из потока формы
         public void Stop()
         {
             Console.WriteLine($"Name={Thread.CurrentThread.Name}");
-            _contin = false; // Метод
-            Thread.CurrentThread.Abort();
+            _contin = false;
         }
     }
 

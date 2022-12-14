@@ -12,9 +12,6 @@ namespace MainCycleTest
 {
     public partial class Form1 : Form
     {
-        public delegate void StopCycle();
-        public event StopCycle StopCycleEvent;
-
         private MainCycle _mainCycle;
         public Form1()
         {
@@ -33,8 +30,7 @@ namespace MainCycleTest
 
         private void button2_Click(object sender, EventArgs e)
         {
-            StopCycleEvent.Invoke();
-            //_mainCycle.Stop();
+            _mainCycle.Stop();
         }
     }
 }
