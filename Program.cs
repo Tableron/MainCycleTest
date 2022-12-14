@@ -75,7 +75,7 @@ namespace MainCycleTest
                     Data = i;
                     Console.WriteLine(i);
 
-                    Thread.Sleep(1000); // задержка 100 мс
+                    Thread.Sleep(100); // задержка 100 мс
                 }
             }
         }
