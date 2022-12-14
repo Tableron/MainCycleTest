@@ -16,7 +16,7 @@ namespace MainCycleTest
 
             // Поток с циклом
             MainCycle mainCycle = new MainCycle(); // mc общий для обоих потоков
-            Thread mcThread = new Thread(mainCycle.Start); // в новом потоке будет запускаться Start у ms
+            Thread mcThread = new Thread(mainCycle.Start); // в новом потоке будет запускаться Start у mainCycle
             mcThread.IsBackground = false; // Прекращение этого потока прекращает программу
             mcThread.Name = "mcThread";
             mcThread.Start(); // запуск потока
